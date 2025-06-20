@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: shopping-demo
+    env: php
+    plan: free
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader
+    startCommand: |
+      php artisan serve --host 0.0.0.0 --port 10000
+    autoDeploy: true
+    envVars:
+      - key: APP_KEY
+        value: 你自己的 APP_KEY
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: DB_DATABASE
+        value: /app/database/database.sqlite
