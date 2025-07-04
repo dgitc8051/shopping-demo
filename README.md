@@ -68,20 +68,24 @@ PHP：8.1 或以上（建議使用 XAMPP 控制面板啟動 Apache與資料庫�
 
 
 # 1. 複製專案
-git clone https://github.com/dgitc8051/shopping-demo.git
+- git clone https://github.com/dgitc8051/shopping-demo.git
 
 # 2. 安裝套件
-composer install
+- composer install
 
 # 3. 建立 .env 檔並設定資料庫
-cp .env.example .env
-php artisan key:generate
 
-打開.env檔，設定資料庫連線資訊，例如：
+執行下列指令複製環境設定檔，並產生應用金鑰：
+- cp .env.example .env
+- php artisan key:generate
 
-DB_DATABASE=shopping_cart
-DB_USERNAME=root
-DB_PASSWORD=
+- 接著打開 .env 檔，設定資料庫連線資訊，例如：
+
+- DB_DATABASE=shopping_cart
+- DB_USERNAME=root
+- DB_PASSWORD=
+
+資料庫名稱可自行命名，請先在 phpMyAdmin 中建立對應的資料庫。
 
 # 4. 執行 migration
 php artisan migrate
