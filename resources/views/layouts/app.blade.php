@@ -65,7 +65,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const deleteForms = document.querySelectorAll('.delete-form');
-            
+
             deleteForms.forEach(form => {
                 form.addEventListener('submit', function (e) {
                     e.preventDefault();
@@ -84,6 +84,20 @@
                             form.submit();
                         }
                     });
+                });
+            });
+
+            // 表單送出時按鈕鎖定 + Loading 效果
+            const forms = document.querySelectorAll('form');
+
+            forms.forEach(form => {
+                form.addEventListener('submit', function () {
+                    const submitBtn = form.querySelector('[type="submit"]');
+
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm"></span>請稍等...`;
+                    }
                 });
             });
         });

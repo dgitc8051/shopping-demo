@@ -93,9 +93,10 @@
             </div>
         </div>
 
-        <button type="submit">新增商品</button>
+        <button type="submit" id="submit-btn" class="btn btn-primary">新增商品</button>
         <a href="{{ route('products.index') }}">返回列表</a>
     </form>
+
     <!-- <script> 單欄位寫法
         document.addEventListener('DOMContentLoaded', function () {
             const nameInput = document.getElementById('name');
@@ -111,6 +112,7 @@
             })
         })
     </script> -->
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const fields = ['name', 'price', 'stock', 'category', 'description'];
@@ -126,9 +128,20 @@
                     } else {
                         input.classList.remove('is-invalid');
                         errorDiv.style.display = 'none';
-                    }
-                })
-            })
+                    };
+                });
+            });
         })
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            const submitBtn = document.getElementById('submit-btn')
+            
+            form.addEventListener('submit', function () {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm"></span>請稍等...`;
+            });
+        });
     </script>
 @endsection

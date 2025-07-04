@@ -31,11 +31,16 @@
         <h4>總計:${{ number_format($total) }}</h4>
     @endif
     @if(!empty($cart))
-        <form action="{{ route('cart.clear') }}" method="post">
+        <form action="{{ route('cart.clear') }}" method="post" class="delete-form">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-warning mb-4" onclick="return confirm('確定要清空購物車嗎?')">清空購物車</button>
+            <button type="submit" class="btn btn-danger btn-sm">清空購物車</button>
         </form>
+        <div class="d-grid gap-2 mt-4">
+            <a href="{{ route('checkout.create') }}" class="btn btn-primary">去結帳</a>
+        </div>
     @endif
-    <a href="{{ route('products.index') }}">繼續購物</a>
+    <div class="d-grid gap-2 mt-4">
+        <a href="{{ route('products.index') }}" class="btn btn-primary">繼續購物</a>
+    </div>
 @endsection

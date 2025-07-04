@@ -21,19 +21,19 @@
 
     <a href="{{ route('products.edit', $product->id) }}">編輯</a>
 
-<!-- 
-    <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline">
-        @csrf
-        @method('DELETE')
-        <button type="submit" onclick="return confirm('確定要刪除這個商品嗎？')">刪除</button>
-    </form> 
--->
+    <!-- 
+        <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onclick="return confirm('確定要刪除這個商品嗎？')">刪除</button>
+        </form> 
+    -->
 
 
     <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline" class="delete-form">
         @csrf
         @method('DELETE')
-        <button type="submit">刪除</button>
+        <button type="submit" class="btn btn-danger btn-sm">刪除</button>
     </form>
     <br><br>
 

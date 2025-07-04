@@ -99,7 +99,7 @@
                 請輸入商品描述
             </div>
         </div>
-        <button type="submit">更新商品</button>
+        <button type="submit" id="submit-btn" class="btn btn-primary">更新商品</button>
         <a href="{{route('products.index')}}">返回列表</a>
     </form>
 
