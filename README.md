@@ -79,7 +79,7 @@ PHP：8.1 或以上（建議使用 XAMPP 控制面板啟動 Apache與資料庫�
 - cp .env.example .env
 - php artisan key:generate
 
-- 接著打開 .env 檔，設定資料庫連線資訊，例如：
+接著打開 .env 檔，設定資料庫連線資訊，例如：
 
 - DB_DATABASE=shopping_cart
 - DB_USERNAME=root
